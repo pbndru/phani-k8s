@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: phani-pod
+spec:
+  containers:
+  - name: phani-container
+    image: phani-k8s:v1
+    ports:
+    - containerPort: 3000

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phani-deployment
+spec:
+  replicas: 3 # Running 3 copies of our Pod
+  selector:
+    matchLabels:
+      app: phani-k8s
+  template:
+    metadata:
+      labels:
+        app: phani-k8s
+    spec:
+      containers:
+      - name: phani-container
+        image: phani-k8s:v1
+        ports:
+        - containerPort: 3000
