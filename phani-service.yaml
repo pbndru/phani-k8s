@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: phani-service
+spec:
+  selector:
+    app: phani-k8s      #find pods with this label
+  ports:
+  - port: 80            # port service listen to
+    targetPort: 3000    # port on the pod to forward to
+  type: LoadBalancer    # makes service accessible from outside cluster

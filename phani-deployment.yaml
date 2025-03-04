@@ -17,3 +17,14 @@ spec:
         image: phani-k8s:v1
         ports:
         - containerPort: 3000
+        env:
+        - name: MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: phani-config
+              key: MESSAGE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: phani-secret
+              key: API_KEY
